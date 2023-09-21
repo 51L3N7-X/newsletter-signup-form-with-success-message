@@ -1,0 +1,241 @@
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/fonts/Roboto-Bold.ttf);
+  font-weight: bold;
+}
+
+:root {
+  --pr-r-color: hsl(4, 100%, 67%);
+  --pr-r-op-color: hsla(4, 100%, 67%, 0.500);
+  --pr-r2-color: hsl(4, 86%, 80%);
+
+  --nt-dg-color: hsl(234, 29%, 20%);
+  --nt-c-color: hsl(235, 18%, 26%);
+  --nt-g-color: hsl(231, 7%, 60%);
+  --nt-w-color: hsl(0, 0%, 100%);
+
+  --pink: #ff3e83;
+  --orange: #fd634a;
+  --shadow: #ff3e8355;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--nt-c-color);
+  color: var(--nt-dg-color);
+}
+
+.card {
+  display: flex;
+  background-color: var(--nt-w-color);
+  width: 800px;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.left {
+  margin: 2rem;
+  width: 50%;
+}
+
+.right {
+  width: 60%;
+}
+
+.right img {
+  width: 100%;
+}
+
+.left h1 {
+  font-size: 3rem;
+  margin: 3rem 0 1.5rem 0;
+  font-weight: bold;
+}
+
+.left p {
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  font-weight: 400;
+}
+
+.left ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  font-size: 0.9rem;
+  gap: 10px;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+li::before {
+  content: "";
+  display: inline-block;
+  background-image: url(./assets/images/icon-list.svg);
+  background-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem 0;
+}
+
+form .lables {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+form .lables .invalid {
+  display: none;
+  color: var(--pr-r-color);
+}
+
+form input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: var(--nt-g-color);
+  cursor: pointer;
+}
+
+form input::placeholder {
+  color: var(--nt-g-color);
+}
+
+form input:hover::placeholder {
+  color: var(--nt-dg-color);
+}
+
+form button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  background-color: var(--nt-dg-color);
+  color: var(--nt-w-color);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: linear-gradient(to right, var(--pink), var(--orange));
+  box-shadow: 0 1rem 1.5rem var(--shadow);
+}
+
+.success-card {
+  display: none;
+  width: 400px;
+  background-color: var(--nt-w-color);
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.success-card img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.success-card h1 {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+  font-weight: bold;
+}
+
+.success-card p {
+  font-size: 0.7rem;
+  padding-inline-end: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.submitted-email {
+  font-weight: bold;
+}
+
+.success-card button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  outline: 0;
+  border-width: 1px;
+  background-color: var(--nt-dg-color);
+  color: var(--nt-w-color);
+  font-weight: bold;
+  cursor: pointer;
+  border-color: transparent;
+}
+
+.success-card button:hover {
+  background: linear-gradient(to right, var(--pink), var(--orange));
+  box-shadow: 0 1rem 1.5rem var(--shadow);
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    flex-direction: column-reverse;
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .right , .left {
+    width: auto;
+  }
+
+  .left h1 {
+    margin-top: 1rem;
+  }
+
+  .success-card {
+    border-radius: 0;
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .success-card img {
+    margin-top: 40%;
+  }
+
+  .success-card p {
+    margin-bottom: 55%;
+  }
+
+}
+
+.error {
+    border-color: var(--pr-r-color);
+    color: var(--pr-r-color);
+    background-color: var(--pr-r-op-color);
+}
+
+.error::placeholder {
+    color: var(--pr-r-color);
+}
